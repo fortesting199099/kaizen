@@ -20,10 +20,7 @@ public class Main {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Valyuta[] valyutas = gson.fromJson(inputStream, Valyuta[].class);
-            HttpClient httpClient  = HttpClient.newBuilder()
-                    .build();
             for (Valyuta valyuta : valyutas) {
-
                 System.out.println(valyuta.getId()+", "+valyuta.getCcyNm_UZ()+", "+valyuta.getRate());
             }
 
